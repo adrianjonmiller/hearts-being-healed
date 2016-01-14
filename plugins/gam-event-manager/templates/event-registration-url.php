@@ -1,1 +1,0 @@
-<p><?php _e( 'To register for this event please visit the following URL:', 'gam-event-manager' ); ?> <a href="<?php echo esc_url( $register->url ); ?>" target="_blank" rel="nofollow"><?php echo esc_html( $register->url ); ?> &rarr;</a></p>
