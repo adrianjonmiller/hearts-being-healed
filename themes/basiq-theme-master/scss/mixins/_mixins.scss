@@ -1,0 +1,23 @@
+@mixin flexbox {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+
+@mixin mobile {
+  .mobile & {
+    @content;
+  }
+}
+
+@mixin tablet {
+  .tablet & {
+    @content;
+  }
+}
+
+@mixin desktop {
+  .desktop & {
+    @content;
+  }
+}

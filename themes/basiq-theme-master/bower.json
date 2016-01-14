@@ -1,0 +1,21 @@
+{
+  "name": "Nils Lindstrom",
+  "version": "0.0.0",
+  "homepage": "nilslindstrom.com",
+  "authors": [
+    "Adrian Miller <adrianjonmiller@gmail.com>"
+  ],
+  "description": "Nils Lindstrom custom theme",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Behaviors.js": "git@github.com:adrianjonmiller/behaviors.js.git",
+    "Mobile_Detect": "~2.8.17"
+  }
+}

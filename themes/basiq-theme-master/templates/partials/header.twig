@@ -1,0 +1,29 @@
+{% block header %}
+<header class="header">
+  <div class="container">
+    <h1 class="text-centered" role="banner">
+      <a class="unstyle" href="/" rel="home">
+        <span class="">{{site.name}}</span>
+      </a>
+    </h1>
+    <nav class="header-nav" role="navigation">
+      <ul>
+      {% for item in menu.get_items %}
+        <li class="nav-style--a {{item.classes | join(' ')}}">
+          <a href="{{item.get_link}}">{{item.title}}</a>
+          {% if item.get_children %}
+            <ul class="dropdown">
+            {% for child in item.get_children %}
+              <li class="nav-style--b">
+                <a href="{{child.get_link}}">{{child.title}}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    </nav><!-- #nav -->
+  </div>
+</header>
+{% endblock %}
