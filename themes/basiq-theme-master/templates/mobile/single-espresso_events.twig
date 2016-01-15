@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <h1>Event</h1>
+  <br>
+	{{ dump(post.event) }}
+	{{ post.event.description }}
+  <br>
+  <h1>Venue</h1>
+  <br>
+	{{ dump(post.venue) }}
+  <br>
+  <h1>People</h1>
+  <br>
+	{{ dump(post.people["Board Member"][1]) }}
+  <br>
+	{{ dump(post.people["Board Member"][1].get('PER_bio')) }}
+  <br>
+  <br>
+
+
+
+{% endblock %}

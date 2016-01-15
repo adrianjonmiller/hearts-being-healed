@@ -7,7 +7,7 @@
       </a>
     </h1>
     <nav class="header-nav" role="navigation">
-      <ul>
+      <ul class="measure">
       {% for item in menu.get_items %}
         <li class="nav-style--a {{item.classes | join(' ')}}">
           <a href="{{item.get_link}}">{{item.title}}</a>
