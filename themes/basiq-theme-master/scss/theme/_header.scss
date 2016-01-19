@@ -1,0 +1,15 @@
+.header {
+  @include shadow();
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-b;
+  width: 100%;
+  z-index: 1000;
+
+  .header-logo {
+    margin-top: 1rem;
+    max-width: 300px;
+  }
+}

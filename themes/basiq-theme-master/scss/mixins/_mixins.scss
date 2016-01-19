@@ -1,5 +1,4 @@
 @mixin flexbox {
-  flex-wrap: wrap;
   display: flex;
 }
 
@@ -20,4 +19,9 @@
   .desktop & {
     @content;
   }
+}
+
+
+@mixin shadow {
+  box-shadow: 0 0 4px rgba(black, 0.4);
 }

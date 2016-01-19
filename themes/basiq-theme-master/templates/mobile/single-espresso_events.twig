@@ -1,23 +1,70 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <h1>Event</h1>
-  <br>
-	{{ dump(post.event) }}
-	{{ post.event.description }}
-  <br>
-  <h1>Venue</h1>
-  <br>
-	{{ dump(post.venue) }}
-  <br>
-  <h1>People</h1>
-  <br>
-	{{ dump(post.people["Board Member"][1]) }}
-  <br>
-	{{ dump(post.people["Board Member"][1].get('PER_bio')) }}
-  <br>
-  <br>
+<!-- Event Header -->
+<div class="event">
+  <section class="event-header">
+    <div class="container">
+      <div class="flex">
+        <div class="">
+          <h2 class="heading--xs smallcap inverse collapse">{{ post.display_date }}</h2>
+          <h1 class="heading--xl font-thin">{{ post.title }}</h1>
+        </div>
+        <div class="flex-end">
+          <a href="{{link}}" role="button" class="button-b">Register Today</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 
+<div class="container">
+  <div class="measure">
+    <div class="">
+      <section class="event">
+        <div class="measure">
+          <div class="event-description">
+            {{ post.event.get("EVT_desc") }}
+          </div>
+          <div class="">
+            <div class="">
+              <section>
+                <h3 class="heading--lg font-black">Event Schedule</h3>
+                <h4 class="heading--sm">{{ post.display_date }}</h4>
+              </section>
+            </div>
+            <h3 class="heading--lg font-black">Speaker(s)</h3>
+            <div class="event-speakers">
+              {% for person in post.people["Speaker"] %}
+
+                <div class="event-speakers-speaker flex">
+                  {{ person.feature_image }}
+                  <div class="">
+                    <h4 class="heading--xs font-bold">{{ person.full_name }}</h4>
+                    <p>
+                      {{ person.get('PER_short_bio')}}
+                    </p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        {{ event_register }}
+        {% filter shortcodes %}
+          [ESPRESSO_TICKET_SELECTOR event_id="23"]
+        {% endfilter %}
+      </section>
+    </div>
+    <div id="sidebar">
+      {{ dynamic_sidebar }}
+
+
+    </div>
+  </div>
+</div>
 
 {% endblock %}

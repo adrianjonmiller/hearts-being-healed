@@ -1,0 +1,15 @@
+.button-a {
+  background-color: $color-a;
+  color: #fff;
+  font-size: 11pt;
+}
+
+.button-b {
+  background-color: $color-b;
+  color: #fff;
+  font-size: 11pt;
+
+  &:hover {
+    background-color: scale-color($color-b, $lightness: -10%);
+  }
+}

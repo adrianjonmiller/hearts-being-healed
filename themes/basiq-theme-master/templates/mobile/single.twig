@@ -1,31 +1,22 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% if sidebar_2 %}
-		<div class="top-bar">
-			<aside class="block gray">
-				{{ sidebar_2 }}
-			</aside>
-		</div>
-	{% endif %}
-	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<div class="measure">
-			{% if post.thumbnail.src %}
-				<div class="">
-					<img src="{{post.thumbnail.src}}" />
-				</div>
-			{% endif %}
-
-			<div class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
-				</p>
-				<div class="article-body">
-					{{post.content}}
-				</div>
+<div class="container">
+	<div class="measure">
+		<div class="article-content">
+			<h1 class="display--post collapse">{{post.title}}</h1>
+			<p class="blog-author">
+				<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+			</p>
+			<div class="article-body">
+				{{post.content}}
 			</div>
 		</div>
-
-	</article>
+		{% if dynamic_sidebar %}
+		<div class="">
+			{{ dynamic_sidebar }}
+		</div>
+		{% endif %}
+	</div>
+</div>
 {% endblock %}

@@ -10,6 +10,8 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+show_admin_bar( false );
+
 // Base template route
 $template_base = 'templates';
 
@@ -89,7 +91,7 @@ class StarterSite extends TimberSite {
 		$context['device'] = device_class();
 		$context['theme_url'] = get_stylesheet_directory_uri();
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu('primary-menu');
+		$context['menu'] = new TimberMenu('primary');
 		$context['dynamic_sidebar'] = Timber::get_widgets('sidebar-1');
 		$context['site'] = $this;
 		return $context;
@@ -104,12 +106,12 @@ class StarterSite extends TimberSite {
 
 	function loadScripts() {
     wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
-
+		wp_enqueue_style( 'ionicons', get_template_directory_uri(). '/bower_components/Ionicons/css/ionicons.css', array(), '', false );
   }
 
 	function widgets() {
 		register_sidebar( array(
-			'name'          => esc_html__( 'Sidebar', 'theme' ),
+			'name'          => esc_html__( 'Blog Sidebar', 'theme' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -119,7 +121,7 @@ class StarterSite extends TimberSite {
 		) );
 
 		register_sidebar( array(
-			'name'          => esc_html__( 'Topbar', 'theme' ),
+			'name'          => esc_html__( 'Event Sidebar', 'theme' ),
 			'id'            => 'sidebar-2',
 			'description'   => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',

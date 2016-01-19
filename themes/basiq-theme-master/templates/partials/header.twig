@@ -1,12 +1,12 @@
 {% block header %}
 <header class="header">
-  <div class="container">
-    <h1 class="text-centered" role="banner">
+  <div class="flex">
+    <h1 class="header-logo">
       <a class="unstyle" href="/" rel="home">
-        <span class="">{{site.name}}</span>
+        <img src="{{ theme.link }}/img/logo.png" alt="{{site.name}}" />
       </a>
     </h1>
-    <nav class="header-nav" role="navigation">
+    <nav class="header-nav flex-end" role="navigation">
       <ul class="measure">
       {% for item in menu.get_items %}
         <li class="nav-style--a {{item.classes | join(' ')}}">

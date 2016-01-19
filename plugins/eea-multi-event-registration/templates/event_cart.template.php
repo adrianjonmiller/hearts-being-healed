@@ -3,8 +3,6 @@
 	<form id="event-cart-qty-frm" action="<?php echo $register_url; ?>" method="POST">
 		<input type="hidden" name="event_cart" value="update">
 
-		<h2 class=""><?php echo $event_cart_heading;?></h2>
-
 		<div id="event-cart-wrap-dv" class="event-cart-wrap-dv">
 
 			<table id="event-cart-tbl" class="event-cart-tbl" border="0" cellspacing="0" cellpadding="0" style="width:100%;">

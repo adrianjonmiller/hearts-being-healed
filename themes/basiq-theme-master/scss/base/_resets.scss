@@ -4,6 +4,21 @@
   margin-top: 0;
 
   + * {
+    margin-top: 2rem;
+
+    p & {
+      margin-top: 0;
+    }
+  }
+}
+
+
+h1, h2, h3, h4, h5, p {
+  font-size: 1rem;
+  margin-bottom: 0;
+  font-weight: normal;
+
+  + * {
     margin-top: 1rem;
   }
 }
@@ -14,6 +29,7 @@ html {
   font-size: 87.5%;
   height: 100%;
   background: #fcfcfc;
+  line-height: 1.5rem;
 }
 
 html, body {
@@ -24,6 +40,7 @@ html, body {
 }
 
 body {
+  margin-top: 0;
   padding-bottom: 2rem;
 }
 
@@ -35,10 +52,22 @@ body > footer {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, p {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: normal;
+button, [role="button"] {
+  background: transparent;
+  border-radius: 0;
+  line-height: 1em;
+  padding: 1.25rem 3rem;
+  border: none;
+  outline: none;
+  border-radius: .2rem;
+  display: inline-block;
+  transition: background-color .1s;
+  margin-bottom: .5rem;
+  text-shadow: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 ul {
@@ -56,6 +85,7 @@ ul {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -66,16 +96,6 @@ a {
   white-space: nowrap;
   color: inherit;
   text-shadow: 1px 0 rgba(#fff, 0.5), -1px 0 rgba(#fff, 0.5);
-
-  &:after {
-    border-bottom: solid 1px #777;
-    bottom: 0.075em;
-    content: "";
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-  }
 
   &:visited {
     color: inherit;

@@ -1,0 +1,22 @@
+td {
+  height: 4rem;
+}
+
+tr + tr td {
+  border-top: solid thin gray;
+}
+
+thead {
+  th {
+    border-bottom: solid thin gray;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  span {
+    margin-top: 0;
+  }
+}

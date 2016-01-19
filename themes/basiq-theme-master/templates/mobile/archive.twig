@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container">
+		<div class="measure">
+			<div class="col-2-3">
+				{% for post in posts %}
+					{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+				{% endfor %}
+			</div>
+			{% if dynamic_sidebar %}
+			<div id="sidebar">
+				{{ dynamic_sidebar }}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

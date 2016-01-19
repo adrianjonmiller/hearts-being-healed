@@ -1,7 +1,7 @@
 {
-  "name": "Nils Lindstrom",
+  "name": "Hearts Being Healed",
   "version": "0.0.0",
-  "homepage": "nilslindstrom.com",
+  "homepage": "heartsbeinghealed.com",
   "authors": [
     "Adrian Miller <adrianjonmiller@gmail.com>"
   ],
@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "Behaviors.js": "git@github.com:adrianjonmiller/behaviors.js.git",
-    "Mobile_Detect": "~2.8.17"
+    "Mobile_Detect": "~2.8.17",
+    "Ionicons": "ionicons#~2.0.1"
   }
 }
