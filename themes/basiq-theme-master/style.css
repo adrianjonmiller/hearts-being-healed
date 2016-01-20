@@ -8,7 +8,7 @@
  * Description: Starter Theme to use with Timber
  * Author: Upstatement and YOU!
 */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic,700italic);
 * {
   margin-top: 0;
 }
@@ -236,12 +236,12 @@ html > footer {
   max-width: calc(66.66666666666% - 1rem) !important;
 }
 
-.text-centered {
-  text-align: center !important;
-}
-
 .is-hidden {
   display: none !important;
+}
+
+.block {
+  display: block;
 }
 
 .float-right {
@@ -335,13 +335,30 @@ html > footer {
 
 .home .header {
   background-color: transparent;
+  box-shadow: none;
+}
+
+.home main[role="main"] {
+  margin-top: -84px;
 }
 
 .home .hero {
-  background: url("http://www.freelargeimages.com/wp-content/uploads/2014/12/Landscape_01.jpg") center center no-repeat;
+  background: url("img/home-hero.jpg") center center no-repeat;
   background-size: cover;
-  height: 100vh;
+  padding-top: 150px;
+  height: 80vh;
   width: 100%;
+}
+
+.home .mission-statement {
+  background-color: #743E5B;
+  color: #fff;
+}
+
+.home .mailing-list {
+  background: url("img/home-mailing_list_bg.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 50pt 0;
 }
 
 html {
@@ -409,6 +426,11 @@ html {
 
 .font-black {
   font-weight: 900;
+}
+
+.banner--hero {
+  font: 100 35pt "Lato", sans-serif;
+  color: #fff;
 }
 
 .display--page {

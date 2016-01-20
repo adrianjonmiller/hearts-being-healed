@@ -2,13 +2,15 @@
 
 {% block content %}
 <section class="hero">
+  <div class="container">
 
-  <h2>Women, sharing their journies</h2>
+    <h2 class="banner--hero">Women, sharing their journies</h2>
 
-    <p>Chico Conference March 19</p>
+      <p class="text-inverse">Chico Conference March 19</p>
 
-    <a href="#" title="Register Today" class="button-a">Register Today</a>
+      <a href="#" title="Register Today" class="button-a">Register Today</a>
 
+  </div>
 </section> <!-- / hero -->
 
 <section class="conferences">
@@ -22,7 +24,9 @@
 
         <h3 class="heading--md text-centered"><span class="block">California</span> Chico</h3>
 
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
+
+          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
 
       </div> <!-- / column - chico -->
 
@@ -30,7 +34,9 @@
 
         <h3 class="heading--md text-centered"><span class="block">California</span> Portola</h3>
 
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
+
+          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
 
       </div> <!-- / column - portola -->
 
@@ -39,27 +45,23 @@
 </section> <!-- / conferences -->
 
 <section class="mission-statement">
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="measure">
 
-      <div>
-
-        <img src="http://www.freelargeimages.com/wp-content/uploads/2014/12/Landscape_01.jpg">
-
-      </div>
+      <img src="{{theme.link}}/img/home-mission_img.jpg">
 
       <div>
 
         <h2 class="heading--md">Mission Statement</h2>
 
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>A ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore Women's hearts.</p>
 
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum.</p>
+          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
 
       </div>
 
     </div>
-  </div>
+  <!-- </div> -->
 </section> <!-- / mission statement -->
 
 <section class="blog">
@@ -69,19 +71,16 @@
 
     <div class="measure">
 
-      <article>
+      {% for post in posts|slice(0,2) %}
 
-        <h3>This will be the title &raquo; {{post.title}}</h3>
+        {{ include('article.twig') }}
 
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-          <p><a href="#" title="Continue reading {{post.title}}">Read More</a></p>
-
-      </article>
-
-      <p><a href="#" title="Go to Blog">Go to Blog</a></p>
+      {% endfor %}
 
     </div>
+
+    <p><a href="#" title="Go to Blog">Go to Blog</a></p>
+
   </div>
 </section> <!-- / blog -->
 

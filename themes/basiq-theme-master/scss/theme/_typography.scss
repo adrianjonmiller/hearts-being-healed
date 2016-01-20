@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic,700italic);
 
 html {
   font-family: "Lato", Helvetica, sans-serif;
@@ -74,7 +74,8 @@ html {
 
 .banner- {
   &-hero {
-
+    font: 100 35pt "Lato", sans-serif;
+    color: #fff;
     &-subhead {
 
     }
