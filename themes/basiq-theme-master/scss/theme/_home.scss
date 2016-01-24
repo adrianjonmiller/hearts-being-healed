@@ -12,6 +12,12 @@
     padding-top: 150px;
     height: 80vh;
     width: 100%;
+    .banner--hero {
+      max-width: 70%;
+    }
+    .banner--subhead {
+      margin: 2rem 0;
+    }
   }
   .mission-statement {
     background-color: #743E5B;

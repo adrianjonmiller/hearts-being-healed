@@ -74,11 +74,18 @@ html {
 
 .banner- {
   &-hero {
-    font: 100 35pt "Lato", sans-serif;
+    font-size: 72pt;
+    line-height: 80pt;
+    font-weight: 100;
     color: #fff;
-    &-subhead {
-
-    }
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+  }
+  &-subhead {
+    font-weight: 100;
+    font-size: 30px;
+    color: #FFFFFF;
+    line-height: 21px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
   }
 }
 
@@ -87,10 +94,10 @@ html {
     font-size: 32pt;
     font-weight: 100;
     line-height: 4rem;
+  }
 
-    &-subhead {
+  &-subhead {
 
-    }
   }
 
   &-post {
@@ -100,9 +107,11 @@ html {
   }
 
   &-sidebar {
-    &-subhead {
 
-    }
+  }
+
+  &-subhead {
+
   }
 }
 
