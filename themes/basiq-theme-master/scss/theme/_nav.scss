@@ -7,12 +7,12 @@
     display: inline-block;
     color: #fff;
     text-shadow: none;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     background-color: transparent;
     transition: background-color .25s;
 
     &:hover {
-      background-color: scale-color($color-b, $lightness: -6%);
+      background-color: scale-color($color-b, $lightness: -8%);
     }
   }
 
