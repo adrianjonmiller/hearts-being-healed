@@ -69,23 +69,24 @@ html {
   font-weight: 900;
 }
 
-
-
-
 .banner- {
   &-hero {
-    font-size: 72pt;
-    line-height: 80pt;
+    line-height: 40pt;
+    font-size: 32pt;
     font-weight: 100;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     color: #fff;
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    @include desktop {
+      font-size: 72pt;
+      line-height: 80pt;
+    }
   }
   &-subhead {
+    line-height: 21px;
     font-weight: 100;
     font-size: 30px;
-    color: #FFFFFF;
-    line-height: 21px;
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    color: #fff;
   }
 }
 
@@ -94,16 +95,19 @@ html {
     font-size: 32pt;
     font-weight: 100;
     line-height: 4rem;
-  }
 
-  &-subhead {
-
+    &-subhead {
+      letter-spacing: 2pt;
+      font-size: 12pt;
+      color: black;
+      @include .smallcap;
+    }
   }
 
   &-post {
+    line-height: 3rem;
     font-size: 21pt;
     font-weight: 400;
-    line-height: 3rem;
   }
 
   &-sidebar {
