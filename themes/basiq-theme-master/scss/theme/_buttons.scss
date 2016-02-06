@@ -13,3 +13,30 @@
     background-color: scale-color($color-b, $lightness: -10%);
   }
 }
+
+// Button overrides
+
+#event-cart {
+  .event-cart-button{
+    &.button {
+      background-color: $color-c;
+      color: #fff;
+      border: none;
+      font-weight: 400;
+      text-shadow: none;
+      padding: 0 1rem;
+      padding: 1rem 2rem;
+
+      &:hover {
+        background-color: scale-color($color-c, $lightness: -10%);
+        text-decoration: none;
+      }
+
+      &.event-cart-icon-button {
+        height: auto;
+        background-color: #aaa;
+        padding: .5rem;
+      }
+    }
+  }
+}

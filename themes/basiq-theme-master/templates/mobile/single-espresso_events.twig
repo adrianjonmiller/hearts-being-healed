@@ -1,70 +1,105 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<!-- Event Header -->
 <div class="event">
   <section class="event-header">
     <div class="container">
       <div class="flex">
         <div class="">
-          <h2 class="heading--xs smallcap inverse collapse">{{ post.display_date }}</h2>
-          <h1 class="heading--xl font-thin">{{ post.title }}</h1>
+          <h2 class="display--page-subhead inverse collapse">{{ post.display_date }}</h2>
+          <h1 class="display--page">{{ post.title }}</h1>
         </div>
         <div class="flex-end">
-          <a href="{{link}}" role="button" class="button-b">Register Today</a>
+          <button role="button" class="button-b" data-behavior="modal" data-modal="register">Register Today</button>
         </div>
       </div>
     </div>
   </section>
-</div>
+  <section class="container">
+    <div class="measure">
+      <div class="event-description">
+      {{page.content}}
+      </div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="measure">
+      <section>
+        <h3 class="heading--lg font-black">Speakers</h3>
+        <div class="event-speakers">
+          {% for person in post.people["Speaker"] %}
 
-
-<div class="container">
-  <div class="measure">
-    <div class="">
-      <section class="event">
-        <div class="measure">
-          <div class="event-description">
-            {{ post.event.get("EVT_desc") }}
-          </div>
-          <div class="">
-            <div class="">
-              <section>
-                <h3 class="heading--lg font-black">Event Schedule</h3>
-                <h4 class="heading--sm">{{ post.display_date }}</h4>
-              </section>
+            <div class="event-speakers-speaker flex">
+              <div>
+                {{ person.feature_image }}
+              </div>
+              <div>
+                <h4 class="heading--xs font-bold collapse event-speakers-title">{{ person.full_name }}</h4>
+                <p>
+                  {{ person.get('PER_short_bio')}}
+                </p>
+              </div>
             </div>
-            <h3 class="heading--lg font-black">Speaker(s)</h3>
-            <div class="event-speakers">
-              {% for person in post.people["Speaker"] %}
-
-                <div class="event-speakers-speaker flex">
-                  {{ person.feature_image }}
-                  <div class="">
-                    <h4 class="heading--xs font-bold">{{ person.full_name }}</h4>
-                    <p>
-                      {{ person.get('PER_short_bio')}}
-                    </p>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </section>
       <section>
-        {{ event_register }}
-        {% filter shortcodes %}
-          [ESPRESSO_TICKET_SELECTOR event_id="23"]
-        {% endfilter %}
+        <section>
+          <h3 class="heading--lg font-black collapse">Event Schedule</h3>
+          <h4 class="heading--xs">{{ post.display_date }}</h4>
+          <ul class="schedule">
+            <li class="schedule-event"><span>8:00am - 9:00am: Registration</span></li>
+            <li class="schedule-event"><span>9:00am - 10:00am: Morning Worship</span></li>
+            <li class="schedule-event"><span>10:15am - 11:15am: First Session</span></li>
+            <li class="schedule-event"><span>11:30am - 12:30pm: Session Two or Lunch</span></li>
+            <li class="schedule-event"><span>12:45pm - 1:45pm: Lunch Two or Session Three</span></li>
+            <li class="schedule-event"><span>2:00pm - 4:30pm: Worship &amp; Keynote</span></li>
+          </ul>
+        </section>
+
+
+        <section>
+          {% for venue in post.venue %}
+            <a class="event-address" target="_blank" href="http://maps.google.com/?q={{ venue.get('VNU_name')}} {{ venue.get('VNU_address')}} {{ venue.get('VNU_city')}} {{ venue.state}}">
+              <p class="text-inverse">
+                {{ venue.get('VNU_name')}} <br>
+                {{ venue.get('VNU_address')}} <br>
+                <span>{{ venue.get('VNU_city')}}</span>,
+                <span>{{ venue.state}}</span>
+              </p>
+              <div class="event-address-icon">
+                <i class="icon ion-ios-location"></i>
+              </div>
+            </a>
+          {% endfor %}
+        </section>
+
+        <section>
+          <h3 class="heading--lg font-black">Board Members</h3>
+          <div class="event-board">
+            {% for person in post.people["Board Member"] %}
+              <div class="event-board-member">
+                <div class="collapse">
+                  {{ person.feature_image }}
+                </div>
+                <h4 class="heading--xs font-bold">{{ person.full_name }}</h4>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
       </section>
     </div>
-    <div id="sidebar">
-      {{ dynamic_sidebar }}
+  </section>
+  <section class="container">
 
-
-    </div>
-  </div>
+  </section>
 </div>
+
+<section class="modal" id="register">
+  <button type="button" name="button" class="modal-close js-close"></button>
+  <h3 class="heading--lg font-black">Event Schedule</h3>
+  <h4 class="heading--sm">{{ post.display_date }}</h4>
+  {{ event_register }}
+</section>
 
 {% endblock %}

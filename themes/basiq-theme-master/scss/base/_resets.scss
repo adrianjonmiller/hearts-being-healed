@@ -2,6 +2,7 @@
 
 * {
   margin-top: 0;
+  box-sizing: border-box;
 
   + * {
     margin-top: 2rem;
@@ -17,10 +18,6 @@ h1, h2, h3, h4, h5, p {
   font-size: 1rem;
   margin-bottom: 0;
   font-weight: normal;
-
-  + * {
-    margin-top: 1rem;
-  }
 }
 
 html {
@@ -52,7 +49,7 @@ body > footer {
   width: 100%;
 }
 
-button, [role="button"], input[type="submit"] {
+button, [role="button"], [type="submit"] {
   background: transparent;
   border-radius: 0;
   line-height: 1em;
@@ -101,6 +98,10 @@ a {
     color: inherit;
   }
 
+  &:hover {
+    text-decoration: underline;
+  }
+
   &.unstyle {
     &:after {
       display: none;
@@ -114,10 +115,36 @@ label {
   }
 }
 
-input, textarea {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="password"],
+textarea {
   padding: .5em .75em;
   font-size: 12pt;
   outline: none;
+  border: none;
+  border-radius: .25rem;
+  border: solid thin #ccc;
+}
+
+fieldset {
+  padding: 0;
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+}
+
+span {
+  margin-top: 0;
+}
+
+legend + *,
+.ee-required-text {
+  margin-top: 0;
 }
 
 .ccf-form-wrapper .form-title {

@@ -13,6 +13,7 @@
 
     &:hover {
       background-color: scale-color($color-b, $lightness: -8%);
+      text-decoration: none;
     }
   }
 
@@ -21,10 +22,21 @@
     // box-shadow: 0 0 15px rgba(black, 0.1) inset;
   }
 
+  @include mobile {
+    min-width: 100%;
+
+    > a {
+      width: 100%;
+      height: 4rem;
+      line-height: 4rem;
+    }
+  }
+
   &.nav-cart {
+
     > a {
       text-indent: 9999em;
-      width: 50px;
+      width: 5rem;
       position: relative;
 
       &:before {

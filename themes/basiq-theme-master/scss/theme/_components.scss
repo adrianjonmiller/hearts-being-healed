@@ -3,6 +3,96 @@
 
   }
   .map-icon {
-    
+
+  }
+}
+
+
+.events {
+  .events-event {
+    + .events-event {
+      padding: 2rem 0 0;
+      border-top: solid thin #ccc;
+    }
+  }
+}
+
+.tease-post + .tease-post {
+  padding: 2rem 0 0;
+  border-top: solid thin #ccc;
+}
+
+body.is-fixed {
+  overflow-y: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1001;
+  padding: 2rem;
+  margin-top: 0;
+  transition: top .5s;
+  transition-delay: .25s;
+  overflow: scroll;
+  -webkit-overflow-scrolling: auto;
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+
+    &::before,
+    &::after {
+      content: "";
+      border-bottom: solid thin gray;
+      width: 60px;
+      display: block;
+      position: relative;
+      transition: transform .25s;
+      transition-delay: 0s;
+      transform: rotate(0);
+    }
+  }
+  &.is-open {
+    top: 0;
+    transition-delay: 0;
+
+    .modal-close {
+
+      &::before {
+        transition-delay: .75s;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transition-delay: .75s;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.schedule {
+  list-style: none;
+  padding-left: 0;
+
+  .schedule-event {
+    padding-left: .5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: .5rem;
+
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i})) {
+        border-left: solid .5rem mix($color-c, $color-b, percentage($i/6));
+      }
+    }
   }
 }

@@ -1,5 +1,9 @@
 body {
   padding-top: $height-header;
+
+  &.mobile {
+    padding-top: 60px;
+  }
 }
 
 .event {
@@ -7,6 +11,11 @@ body {
     iframe {
       float: right;
       margin-left: 3rem;
+      max-width: 100%;
+    }
+
+    p {
+      margin-top: 1rem;
     }
   }
 
@@ -20,8 +29,27 @@ body {
   .event-speakers {
 
     .event-speakers-speaker {
-      > img {
-        margin-right: 1rem;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      > div {
+        flex: 1 1 auto;
+
+        @include mobile {
+          min-width: 100%;
+
+          + div {
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      .event-speakers-title {
+        @include mobile {
+          text-align: center;
+        }
       }
     }
   }

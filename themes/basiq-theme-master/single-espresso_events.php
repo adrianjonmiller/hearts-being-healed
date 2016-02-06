@@ -34,6 +34,7 @@ class TimberEventEspresso extends TimberPost {
 // $post = Timber::query_post();
 // $context['post'] = $post;
 $context = Timber::get_context();
+$context['page'] = new TimberPost();
 $context['post'] = new TimberEventEspresso();
 $context['event_register'] = do_shortcode( '[ESPRESSO_TICKET_SELECTOR event_id="'.$post->ID.'"]' );
 

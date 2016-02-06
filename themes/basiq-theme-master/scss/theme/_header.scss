@@ -11,5 +11,74 @@
   .header-logo {
     margin-top: 1rem;
     max-width: 300px;
+
+    @include mobile {
+      max-width: 200px;
+    }
+  }
+
+  .header-nav {
+    z-index: 1001;
+    transition: left .25s;
+
+    .header-nav-bar {
+      display: none;
+    }
+
+    @include mobile {
+      background: $color-b;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      -webkit-overflow-scrolling: auto;
+
+      .header-nav-bar {
+        display: block;
+        height: 3rem;
+        line-height: 3rem;
+        padding: 0 0 0 1.5rem;
+        background-color: $color-c;
+        font-size: 13pt;
+        color: #fff;
+      }
+
+      .header-nav-open {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0;
+        font-size: 28pt;
+        color: #fff;
+        z-index: 1002;
+        opacity: 1;
+        transition: right .25s;
+      }
+
+      .header-nav-close {
+        height: 3rem;
+        line-height: 3rem;
+        padding: 0 1rem;
+        font-size: 12pt;
+        margin-left: auto;
+        float: right;
+        margin: 0;
+
+        &::after {
+          content: "Hide";
+          color: #fff;
+          font-size: 10pt;
+        }
+      }
+
+      &.is-open {
+        left: 0;
+
+        .header-nav-open {
+          right: -3rem;
+        }
+      }
+    }
   }
 }
