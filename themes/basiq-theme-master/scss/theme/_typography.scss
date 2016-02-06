@@ -97,10 +97,11 @@ html {
     line-height: 4rem;
 
     &-subhead {
+      line-height: 3rem;
       letter-spacing: 2pt;
-      font-size: 12pt;
+      font-size: 9pt;
       color: black;
-      @include .smallcap;
+      @extend .smallcap;
     }
   }
 
@@ -115,7 +116,9 @@ html {
   }
 
   &-subhead {
-
+    font-size: 26pt;
+    color: $color-e;
+    font-weight: 900;
   }
 }
 

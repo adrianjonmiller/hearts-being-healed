@@ -22,7 +22,7 @@
 
       <div>
 
-        <h3 class="heading--lg text-centered"><span class="block display--subhead">California</span> Chico</h3>
+        <h3 class="display--subhead text-centered"><span class="block display--page-subhead">California</span> Chico</h3>
 
           <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
 
@@ -32,7 +32,7 @@
 
       <div>
 
-        <h3 class="heading--lg text-centered"><span class="block display--subhead">California</span> Portola</h3>
+        <h3 class="display--subhead text-centered"><span class="block display--page-subhead">California</span> Portola</h3>
 
         <!-- <h3 class="heading--md text-centered"><span class="block">California</span> Portola</h3> -->
 
@@ -50,7 +50,7 @@
   <!-- <div class="container"> -->
     <div class="measure">
 
-      <div>
+      <div class="mission-img">
 
         <img src="{{theme.link}}/img/home-mission_img.jpg">
 
@@ -73,15 +73,19 @@
 <section class="blog">
   <div class="container">
 
-    <h2 class="heading--md text-centered">From the Blog</h2>
+    <h2 class="display--subhead text-centered">From the Blog</h2>
 
     <div class="measure">
 
-      {% for post in posts|slice(0,2) %}
+      <div class="flex-center">
 
-        {{ include('article.twig') }}
+        {% for post in posts|slice(0,2) %}
 
-      {% endfor %}
+          {{ include('article.twig') }}
+
+        {% endfor %}
+
+      </div>
 
     </div>
 
@@ -91,9 +95,10 @@
 </section> <!-- / blog -->
 
 <section class="mailing-list">
+
   <div class="container">
 
-  <h2 class="heading--md text-centered">Sign Up for our Mailing List</h2>
+    <h2 class="display--subhead text-inverse text-centered">Sign Up for our Mailing List</h2>
 
     <div class="measure">
 
@@ -106,23 +111,24 @@
       </form>
 
     </div>
+
   </div>
+
 </section> <!-- / mailing list -->
 
 <section class="social">
+
   <div class="container">
 
-    <h2 class="heading--md text-centered">Find Us On</h2>
+    <h2 class="display--subhead text-centered">Find Us On</h2>
 
-    <div class="measure">
-
-      <ul>
-        <li><a href="#" title="Facebook">Facebook</a></li>
-        <li><a href="#" title="Twitter">Twitter</a></li>
-        <li><a href="#" title="LinkedIn">LinkedIn</a></li>
+      <ul class="social--column measure flex-center">
+        <li class="social--icon-fb text-centered"><a href="#" title="Facebook"><img src="{{theme.link}}/img/social-facebook.png">Facebook</a></li>
+        <li class="social--icon-tw text-centered"><a href="#" title="Twitter"><img src="{{theme.link}}/img/social-twitter.png">Twitter</a></li>
+        <li class="social--icon-li text-centered"><a href="#" title="LinkedIn"><img src="{{theme.link}}/img/social-linkedin.png">LinkedIn</a></li>
       </ul>
 
-    </div>
   </div>
+
 </section> <!-- / social -->
 {% endblock %}

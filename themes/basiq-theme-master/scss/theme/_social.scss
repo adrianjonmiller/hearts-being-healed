@@ -1,0 +1,16 @@
+.social- {
+  &-column {
+    @extend %unstyle-list;
+    margin-top: 40pt;
+    [class^="social--icon-"] {
+      padding: 10pt 40pt 0;
+      font-size: 12pt;
+      color: #59798E;
+      img {
+        height: 50px;
+        display: block;
+        margin: 0 auto 10pt;
+      }
+    }
+  }
+}
