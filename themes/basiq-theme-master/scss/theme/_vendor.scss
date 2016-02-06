@@ -50,6 +50,14 @@
   }
 }
 
+input.button-primary {
+  margin-top: 0;
+  @extend .button-a;
+}
+
+input.ticket-selector-submit-btn {
+  @extend .button-b;
+}
 
 #event-cart {
   margin-top: 0 !important;
