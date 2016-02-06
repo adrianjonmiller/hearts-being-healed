@@ -458,6 +458,11 @@ main[role="main"] {
   padding: 50pt 0;
 }
 
+.mailing-list [class^="heading--"],
+.mailing-list [class^="display--"] {
+  margin-bottom: 30pt;
+}
+
 .social {
   padding: 0 0 6rem;
 }
@@ -749,7 +754,19 @@ table span {
   margin-top: 0;
 }
 
+input[type="text"], input[type="submit"] {
+  height: 30pt;
+  width: 300px;
+  padding: 0;
+}
+
+input[type="text"] + input[type="submit"] {
+  margin-left: 30pt;
+}
+
 input[type="text"] {
+  padding-left: 5pt;
+  padding-right: 5pt;
   background: #fff;
   border: 1px solid #979797;
 }

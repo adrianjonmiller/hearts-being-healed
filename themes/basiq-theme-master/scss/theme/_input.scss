@@ -1,6 +1,19 @@
 input {
 
+  &[type="text"],
+  &[type="submit"] {
+    height: 30pt;
+    width: 300px;
+    padding: 0;
+  }
+
+  &[type="text"] + &[type="submit"] {
+    margin-left: 30pt;
+  }
+
   &[type="text"] {
+    padding-left: 5pt;
+    padding-right: 5pt;
     background: #fff;
     border: 1px solid #979797;
 
