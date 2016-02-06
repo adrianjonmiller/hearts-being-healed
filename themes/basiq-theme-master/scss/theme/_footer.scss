@@ -4,5 +4,12 @@
   background: -webkit-linear-gradient(top,  #49687d 0%,#5d727d 100%);
   background: linear-gradient(to bottom,  #49687d 0%,#5d727d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49687d', endColorstr='#5d727d',GradientType=0 );
+  padding: 20pt 0;
   border-top: 35px solid #354a58;
+  @extend .text-inverse;
+
+  * {
+    text-shadow: none;
+  }
+
 }

@@ -13,7 +13,7 @@ body {
   .event-header {
     background-color: $color-c;
     padding: 3rem 0;
-    color: #fff;
+    @extend .text-inverse;
     margin-top: -2rem;
   }
 
@@ -54,7 +54,7 @@ body {
       background-color: scale-color($color-c, $lightness: -35%);
       margin-top: 0;
       width: 100px;
-      color: #fff;
+      @extend .text-inverse;
       text-align: center;
       display: flex;
       align-items: center;

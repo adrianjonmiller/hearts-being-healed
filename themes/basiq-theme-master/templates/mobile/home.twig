@@ -8,7 +8,7 @@
 
       <p class="banner--subhead text-inverse">Chico Conference March 19</p>
 
-      <a href="#" title="Register Today" class="button-a">Register Today</a>
+      <a href="#" title="Register Today" class="button-a--large text-inverse">Register Today</a>
 
   </div>
 </section> <!-- / hero -->
@@ -16,9 +16,9 @@
 <section class="conferences">
   <div class="container" style="width: 80%; margin: 0 auto;">
 
-  <h2 class="heading--xl font-thin text-centered">Hearts Being Healed Conference</h2>
+  <h2 class="heading--xl font-thin text-centered" id="title">Hearts Being Healed Conference</h2>
 
-    <div class="measure">
+    <div class="measure" id="mesasurew">
 
       <div>
 
@@ -46,17 +46,13 @@
   </div>
 </section> <!-- / conferences -->
 
-<section class="mission-statement">
+<section class="mission-statement" id="ms">
   <!-- <div class="container"> -->
     <div class="measure">
 
-      <div class="mission-img">
+      <div class="mission-img">&nbsp;</div>
 
-        <img src="{{theme.link}}/img/home-mission_img.jpg">
-
-      </div>
-
-      <div>
+      <div class="mission-state" style="padding-bottom: 17pt;">
 
         <h2 class="heading--md">Mission Statement</h2>
 
@@ -75,21 +71,21 @@
 
     <h2 class="display--subhead text-centered">From the Blog</h2>
 
-    <div class="measure">
+    <div class="measure flex-center">
 
-      <div class="flex-center">
+      {% for post in posts|slice(0,2) %}
 
-        {% for post in posts|slice(0,2) %}
+        {{ include('article.twig') }}
 
-          {{ include('article.twig') }}
-
-        {% endfor %}
-
-      </div>
+      {% endfor %}
 
     </div>
 
-    <p><a href="#" title="Go to Blog">Go to Blog</a></p>
+    <div class="measure flex-center" style="float: right;">
+
+      <p style="Text-align: right;"><a href="#" title="Go to Blog">Go to Blog</a></p>
+
+    </div>
 
   </div>
 </section> <!-- / blog -->
@@ -100,11 +96,11 @@
 
     <h2 class="display--subhead text-inverse text-centered">Sign Up for our Mailing List</h2>
 
-    <div class="measure">
+    <div class="measure flex-center">
 
       <form>
 
-        <input type="text" value="Email address" />
+        <input type="text" placeholder="Email address" />
 
         <input type="submit" value="Submit" />
 

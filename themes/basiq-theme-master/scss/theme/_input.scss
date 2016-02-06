@@ -1,0 +1,28 @@
+input {
+
+  &[type="text"] {
+    background: #fff;
+    border: 1px solid #979797;
+
+    &::-webkit-input-placeholder {
+      color: #C8C8C8 !important;
+    }
+    &:-moz-placeholder {
+      color: #C8C8C8 !important;
+    }
+    &::-moz-placeholder {
+      color: #C8C8C8 !important;
+    }
+    &:-ms-input-placeholder {
+      color: #C8C8C8 !important;
+    }
+
+  }
+
+  &[type="submit"] {
+    background: #068AA7;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    @extend .text-inverse;
+  }
+
+}

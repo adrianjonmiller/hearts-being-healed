@@ -2,7 +2,7 @@
   background-color: $color-a;
   padding: 1rem 2rem;
   font-size: 11pt;
-  color: #fff;
+  @extend .text-inverse;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   border-radius: 4px;
   &:hover {
@@ -12,9 +12,15 @@
   }
 }
 
+.button-a--large {
+  @extend .button-a;
+  padding: 2rem 5rem;
+  font-size: 20pt;
+}
+
 .button-b {
   background-color: $color-b;
-  color: #fff;
+  @extend .text-inverse;
   font-size: 11pt;
 
   &:hover {

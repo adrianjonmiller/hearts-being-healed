@@ -35,10 +35,16 @@ main[role="main"] {
 
 .mission-statement {
   background-color: #743E5B;
-  color: #fff;
+  @extend .text-inverse;
 
   .measure > div:nth-child(2) {
     padding: 1.5rem 1.5rem 0 0;
+  }
+
+  .mission-img {
+    background: url('http://hearts-being-healed:8888/wp-content/themes/basiq-theme-master/img/home-mission_img.jpg');
+    background-size: cover;
+    width: 100%;
   }
 
   // > div {

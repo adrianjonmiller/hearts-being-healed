@@ -92,7 +92,7 @@ nav ul {
   padding-left: 0;
 }
 
-.social--column {
+.social--column, .social--tabs {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -183,6 +183,7 @@ html {
 html body {
   min-height: 100%;
   position: relative;
+  padding-bottom: 385px;
 }
 
 html > footer {
@@ -280,7 +281,6 @@ html > footer {
   height: 6rem;
   line-height: 6rem;
   display: inline-block;
-  color: #fff;
   text-shadow: none;
   padding: 0 1.5rem;
   background-color: transparent;
@@ -312,19 +312,35 @@ html > footer {
   text-align: center;
   font-size: 18pt;
   display: block;
-  color: #fff;
 }
 
-.button-a, input.button-primary {
+.nav-footer {
+  width: 70%;
+  font-size: 13pt;
+  font-weight: 400;
+}
+
+.nav-footer li {
+  line-height: 30pt;
+  width: 20%;
+  float: left;
+}
+
+.nav-footer li li {
+  width: 100%;
+  clear: both;
+  float: left;
+}
+
+.button-a, .button-a--large, input.button-primary {
   background-color: #DA2A1D;
   padding: 1rem 2rem;
   font-size: 11pt;
-  color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   border-radius: 4px;
 }
 
-.button-a:hover, input.button-primary:hover {
+.button-a:hover, .button-a--large:hover, input.button-primary:hover {
   background-color: #c3261a;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   -webkit-transform: translateY(-3px);
@@ -332,9 +348,13 @@ html > footer {
           transform: translateY(-3px);
 }
 
+.button-a--large {
+  padding: 2rem 5rem;
+  font-size: 20pt;
+}
+
 .button-b, input.ticket-selector-submit-btn {
   background-color: #068AA7;
-  color: #fff;
   font-size: 11pt;
 }
 
@@ -344,7 +364,7 @@ html > footer {
 
 .header {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   background-color: #068AA7;
@@ -357,11 +377,36 @@ html > footer {
   max-width: 300px;
 }
 
+.header.is-offcanv-above, .header.is-fixed-top {
+  position: absolute;
+  top: 0;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.header.is-offcanv-above {
+  -webkit-transform: translateX(-6rem);
+      -ms-transform: translateX(-6rem);
+          transform: translateX(-6rem);
+}
+
+.header.is-fixed-top {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
 #footer {
   background: #49687d;
   background: linear-gradient(to bottom, #49687d 0%, #5d727d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49687d', endColorstr='#5d727d',GradientType=0 );
+  padding: 20pt 0;
   border-top: 35px solid #354a58;
+}
+
+#footer * {
+  text-shadow: none;
 }
 
 .header {
@@ -395,11 +440,16 @@ main[role="main"] {
 
 .mission-statement {
   background-color: #743E5B;
-  color: #fff;
 }
 
 .mission-statement .measure > div:nth-child(2) {
   padding: 1.5rem 1.5rem 0 0;
+}
+
+.mission-statement .mission-img {
+  background: url("http://hearts-being-healed:8888/wp-content/themes/basiq-theme-master/img/home-mission_img.jpg");
+  background-size: cover;
+  width: 100%;
 }
 
 .mailing-list {
@@ -482,20 +532,20 @@ html {
 .banner--hero {
   line-height: 40pt;
   font-size: 32pt;
-  font-weight: 100;
+  font-weight: 300;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
 .desktop .banner--hero {
-  font-size: 72pt;
+  font-size: 55pt;
   line-height: 80pt;
 }
 
 .banner--subhead {
   line-height: 21px;
-  font-weight: 100;
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: 300;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #fff;
 }
@@ -525,7 +575,7 @@ html {
   font-weight: 900;
 }
 
-.text-inverse {
+.text-inverse, .nav-style--a a, .nav-style--a.nav-cart > a:before, .nav-footer a, .button-a, .button-a--large, input.button-primary, .button-b, input.ticket-selector-submit-btn, #footer, .mission-statement, .event .event-header, .event .event-address .event-address-icon, .social--tabs [class^="social--tabs-"], input[type="submit"] {
   color: #fff !important;
 }
 
@@ -549,7 +599,6 @@ body {
 .event .event-header {
   background-color: #743E5B;
   padding: 3rem 0;
-  color: #fff;
   margin-top: -2rem;
 }
 
@@ -590,7 +639,6 @@ body {
   background-color: #4b283b;
   margin-top: 0;
   width: 100px;
-  color: #fff;
   text-align: center;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -614,15 +662,70 @@ body {
 }
 
 .social--column [class^="social--icon-"] {
-  padding: 10pt 40pt 0;
   font-size: 12pt;
   color: #59798E;
+}
+
+.social--column [class^="social--icon-"] a {
+  padding: 10pt 30pt;
+  border-radius: 5px;
+  transition: background-color .5s;
+}
+
+.social--column [class^="social--icon-"] a:hover {
+  background-color: #f6f6f6;
 }
 
 .social--column [class^="social--icon-"] img {
   height: 50px;
   display: block;
   margin: 0 auto 10pt;
+}
+
+.social--tabs [class^="social--tabs-"] {
+  margin-bottom: 10pt;
+}
+
+.social--tabs [class^="social--tabs-"] > a {
+  padding: 4pt 20pt 4pt 30pt;
+  font-size: 13pt;
+  transition: background-color .5s;
+}
+
+.social--tabs [class^="social--tabs-"] .icon {
+  position: absolute;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30px;
+  padding-top: 4pt;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.social--tabs [class$="facebook"] a {
+  background-color: #3B5998;
+}
+
+.social--tabs [class$="facebook"] a:hover {
+  background-color: #2d4373;
+}
+
+.social--tabs [class$="twitter"] a {
+  background-color: #50ABF1;
+}
+
+.social--tabs [class$="twitter"] a:hover {
+  background-color: #107acb;
+}
+
+.social--tabs [class$="linkedin"] a {
+  background-color: #0077B5;
+}
+
+.social--tabs [class$="linkedin"] a:hover {
+  background-color: #005582;
 }
 
 td {
@@ -644,6 +747,32 @@ table {
 
 table span {
   margin-top: 0;
+}
+
+input[type="text"] {
+  background: #fff;
+  border: 1px solid #979797;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: #C8C8C8 !important;
+}
+
+input[type="text"]:-moz-placeholder {
+  color: #C8C8C8 !important;
+}
+
+input[type="text"]::-moz-placeholder {
+  color: #C8C8C8 !important;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: #C8C8C8 !important;
+}
+
+input[type="submit"] {
+  background: #068AA7;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .event-cart-button {

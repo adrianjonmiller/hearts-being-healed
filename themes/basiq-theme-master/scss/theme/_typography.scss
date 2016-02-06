@@ -73,18 +73,18 @@ html {
   &-hero {
     line-height: 40pt;
     font-size: 32pt;
-    font-weight: 100;
+    font-weight: 300;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     color: #fff;
     @include desktop {
-      font-size: 72pt;
+      font-size: 55pt;
       line-height: 80pt;
     }
   }
   &-subhead {
     line-height: 21px;
-    font-weight: 100;
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 300;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     color: #fff;
   }

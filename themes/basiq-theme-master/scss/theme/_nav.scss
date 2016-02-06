@@ -5,7 +5,7 @@
     height: $height-header;
     line-height: $height-header;
     display: inline-block;
-    color: #fff;
+    @extend .text-inverse;
     text-shadow: none;
     padding: 0 1.5rem;
     background-color: transparent;
@@ -38,8 +38,27 @@
         text-align: center;
         font-size: 18pt;
         display: block;
-        color: #fff;
+        @extend .text-inverse;
       }
     }
+  }
+}
+
+.nav-footer {
+  width: 70%;
+  font-size: 13pt;
+  font-weight: 400;
+  li {
+    line-height: 30pt;
+    width: 20%;
+    float: left;
+    li {
+      width: 100%;
+      clear: both;
+      float: left;
+    }
+  }
+  a {
+    @extend .text-inverse;
   }
 }
