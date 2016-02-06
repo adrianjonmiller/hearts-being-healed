@@ -46,12 +46,25 @@ main[role="main"] {
     background-size: cover;
     width: 100%;
   }
+}
 
-  // > div {
-  //   background-color: #743E5B;
-  //   width: 50%;
-  //   float: left;
-  // }
+.blog {
+  [class^="display--subhead"]:first-of-type {
+    margin-bottom: 30pt;
+  }
+  article {
+    .heading--sm {
+      font-size: 13pt;
+      font-weight: 700;
+      color: $color-c;
+    }
+    p {
+      color: #383838;
+    }
+    .read-more {
+      text-decoration: underline;
+    }
+  }
 }
 
 .mailing-list {

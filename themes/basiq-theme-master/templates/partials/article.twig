@@ -1,9 +1,9 @@
 <article class="col-2-3">
 
-  <h3 class="heading--sm">{{post.title}}</h3>
+  <h3 class="heading--sm collapse">{{post.title}}</h3>
 
-    {{post.content}}
+    <div class="collapse">{{post.content}}</div>
 
-    <p><a href="{{post.permalink}}" title="Continue reading {{post.title}}">Read More</a></p>
+    <p><a href="{{post.permalink}}" title="Continue reading {{post.title}}" class="read-more">Read More</a></p>
 
 </article>

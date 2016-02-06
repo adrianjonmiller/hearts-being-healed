@@ -75,7 +75,7 @@ html {
     font-size: 32pt;
     font-weight: 300;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    color: #fff;
+    @extend .text-inverse;
     @include desktop {
       font-size: 55pt;
       line-height: 80pt;
@@ -86,7 +86,7 @@ html {
     font-size: 28px;
     font-weight: 300;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    color: #fff;
+    @extend .text-inverse;
   }
 }
 

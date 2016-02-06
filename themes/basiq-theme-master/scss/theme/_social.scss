@@ -28,7 +28,7 @@
       margin-bottom: 10pt;
       @extend .text-inverse;
       > a {
-        padding: 4pt 20pt 4pt 30pt;
+        padding: 7pt 30pt 7pt 35pt;
         font-size: 13pt;
         transition: background-color .5s;
       }
@@ -38,28 +38,49 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: 30px;
-        padding-top: 4pt;
+        width: 40px;
+        padding-top: 7pt;
         text-align: center;
         box-sizing: border-box;
+        img {
+          margin: 0 auto;
+        }
       }
     }
-    [class$="facebook"] a {
-      background-color: $social-facebook;
-      &:hover {
-        background-color: darken($social-facebook, 10%);
+    [class$="facebook"] {
+      img {
+        width: 30%;
+      }
+      a {
+        background-color: $social-facebook;
+        &:hover {
+          background-color: darken($social-facebook, 10%);
+        }
       }
     }
-    [class$="twitter"] a {
-      background-color: $social-twitter;
-      &:hover {
-        background-color: darken($social-twitter, 20%);
+    [class$="twitter"] {
+      .icon {
+        padding-top: 10pt;
+      }
+      img {
+        width: 55%;
+      }
+      a {
+        background-color: $social-twitter;
+        &:hover {
+          background-color: darken($social-twitter, 20%);
+        }
       }
     }
-    [class$="linkedin"] a {
-      background-color: $social-linkedin;
-      &:hover {
-        background-color: darken($social-linkedin, 10%);
+    [class$="linkedin"] {
+      img {
+        width: 60%;
+      }
+      a {
+        background-color: $social-linkedin;
+        &:hover {
+          background-color: darken($social-linkedin, 10%);
+        }
       }
     }
   }

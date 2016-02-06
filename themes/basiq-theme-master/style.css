@@ -409,6 +409,10 @@ html > footer {
   text-shadow: none;
 }
 
+#footer .disclaimer-info a {
+  text-decoration: underline;
+}
+
 .header {
   background-color: transparent;
   box-shadow: none;
@@ -450,6 +454,24 @@ main[role="main"] {
   background: url("http://hearts-being-healed:8888/wp-content/themes/basiq-theme-master/img/home-mission_img.jpg");
   background-size: cover;
   width: 100%;
+}
+
+.blog [class^="display--subhead"]:first-of-type {
+  margin-bottom: 30pt;
+}
+
+.blog article .heading--sm {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #743E5B;
+}
+
+.blog article p {
+  color: #383838;
+}
+
+.blog article .read-more {
+  text-decoration: underline;
 }
 
 .mailing-list {
@@ -539,7 +561,6 @@ html {
   font-size: 32pt;
   font-weight: 300;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  color: #fff;
 }
 
 .desktop .banner--hero {
@@ -552,7 +573,6 @@ html {
   font-size: 28px;
   font-weight: 300;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  color: #fff;
 }
 
 .display--page {
@@ -580,7 +600,7 @@ html {
   font-weight: 900;
 }
 
-.text-inverse, .nav-style--a a, .nav-style--a.nav-cart > a:before, .nav-footer a, .button-a, .button-a--large, input.button-primary, .button-b, input.ticket-selector-submit-btn, #footer, .mission-statement, .event .event-header, .event .event-address .event-address-icon, .social--tabs [class^="social--tabs-"], input[type="submit"] {
+.text-inverse, .nav-style--a a, .nav-style--a.nav-cart > a:before, .nav-footer a, .button-a, .button-a--large, input.button-primary, .button-b, input.ticket-selector-submit-btn, #footer, .mission-statement, .banner--hero, .banner--subhead, .event .event-header, .event .event-address .event-address-icon, .social--tabs [class^="social--tabs-"], input[type="submit"] {
   color: #fff !important;
 }
 
@@ -692,7 +712,7 @@ body {
 }
 
 .social--tabs [class^="social--tabs-"] > a {
-  padding: 4pt 20pt 4pt 30pt;
+  padding: 7pt 30pt 7pt 35pt;
   font-size: 13pt;
   transition: background-color .5s;
 }
@@ -703,10 +723,18 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 30px;
-  padding-top: 4pt;
+  width: 40px;
+  padding-top: 7pt;
   text-align: center;
   box-sizing: border-box;
+}
+
+.social--tabs [class^="social--tabs-"] .icon img {
+  margin: 0 auto;
+}
+
+.social--tabs [class$="facebook"] img {
+  width: 30%;
 }
 
 .social--tabs [class$="facebook"] a {
@@ -717,12 +745,24 @@ body {
   background-color: #2d4373;
 }
 
+.social--tabs [class$="twitter"] .icon {
+  padding-top: 10pt;
+}
+
+.social--tabs [class$="twitter"] img {
+  width: 55%;
+}
+
 .social--tabs [class$="twitter"] a {
   background-color: #50ABF1;
 }
 
 .social--tabs [class$="twitter"] a:hover {
   background-color: #107acb;
+}
+
+.social--tabs [class$="linkedin"] img {
+  width: 60%;
 }
 
 .social--tabs [class$="linkedin"] a {
