@@ -1,12 +1,18 @@
 .header {
   @include shadow();
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: $color-b;
   width: 100%;
   z-index: 1000;
+  transition: background-color, .25s, box-shadow .25s;
+
+  &.in-view {
+    background-color: rgba(black, 0.1);
+    box-shadow: none;
+  }
 
   .header-logo {
     margin-top: 1rem;

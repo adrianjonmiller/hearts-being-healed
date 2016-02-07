@@ -5,17 +5,17 @@
   @extend .text-inverse;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   border-radius: 4px;
+
   &:hover {
     background-color: darken($color-a, 5%);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-    transform: translateY(-3px);
+    text-decoration: none;
   }
 }
 
 .button-a--large {
   @extend .button-a;
-  padding: 2rem 5rem;
-  font-size: 20pt;
+  padding: 1rem 5rem;
+  font-size: 14pt;
 }
 
 .button-b {

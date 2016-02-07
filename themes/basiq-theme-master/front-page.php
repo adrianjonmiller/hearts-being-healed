@@ -18,8 +18,13 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+$args = array(
+  'numberposts' => 3,
+  'post_type'   => 'post'
+);
+ 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
+$context['posts'] = get_posts( $args );
 $context['dynamic_sidebar'] = Timber::get_widgets('sidebar-1');
 
 $templates = array( 'front-page.twig' );

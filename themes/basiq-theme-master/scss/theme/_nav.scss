@@ -2,10 +2,10 @@
   margin-left: 0;
 
   a {
+    color: #eee;
     height: $height-header;
     line-height: $height-header;
     display: inline-block;
-    @extend .text-inverse;
     text-shadow: none;
     padding: 0 1.5rem;
     background-color: transparent;
@@ -14,12 +14,25 @@
     &:hover {
       background-color: scale-color($color-b, $lightness: -8%);
       text-decoration: none;
+
+      .home & {
+        text-decoration: underline;
+        background-color: transparent;
+        color: #fff;
+      }
     }
   }
 
   &.current-menu-item a {
     background-color: scale-color($color-b, $lightness: -15%);
+    cursor: default;
     // box-shadow: 0 0 15px rgba(black, 0.1) inset;
+
+    .home & {
+      background: none;
+      color: #fff;
+      text-decoration: underline;
+    }
   }
 
   @include mobile {
@@ -56,21 +69,16 @@
   }
 }
 
-.nav-footer {
-  width: 70%;
-  font-size: 13pt;
-  font-weight: 400;
-  li {
-    line-height: 30pt;
-    width: 20%;
-    float: left;
-    li {
-      width: 100%;
-      clear: both;
-      float: left;
-    }
+.nav-footer--a {
+  padding-right: 3rem;
+  height: 2rem;
+  line-height: 2rem;
+
+  @include mobile {
+    display: none;
   }
-  a {
-    @extend .text-inverse;
+
+  > a {
+
   }
 }

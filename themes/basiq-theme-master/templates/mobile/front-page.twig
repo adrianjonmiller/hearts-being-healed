@@ -1,10 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<section class="hero">
+<section class="hero js-hero">
   <div class="container">
 
-    <h2 class="banner--hero">Women, sharing their journies</h2>
+    <h2 class="banner--hero text-inverse">Women, sharing<br>their journies</h2>
 
       <p class="banner--subhead text-inverse">Chico Conference March 19</p>
 
@@ -70,22 +70,29 @@
   <div class="container">
 
     <h2 class="display--subhead text-centered">From the Blog</h2>
+    <div class="">
 
-    <div class="measure flex-center">
-
-      {% for post in posts|slice(0,2) %}
-
-        {{ include('article.twig') }}
-
+      {% for post in posts %}
+        <article>
+          <h4 class="display--post">{{post.post_title}}</h4>
+          <p class="collapse">
+            {{post.post_content}}
+          </p>
+          <div class="flex">
+            <div class="flex-end">
+              <a href="{{post.guid}}" title="Continue reading {{post.title}}" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
       {% endfor %}
 
     </div>
 
-    <div class="measure flex-center" style="float: right;">
+    <!-- <div class="flex">
 
-      <p class="heading--sm" style="Text-align: right;"><a href="#" title="Go to Blog">Go to Blog</a></p>
+      <div class="flex-end" ><a href="#" title="Go to Blog">Go to the blog <i class="ion-chevron-right"></i></a></div>
 
-    </div>
+    </div> -->
 
   </div>
 </section> <!-- / blog -->
@@ -98,7 +105,7 @@
 
     <div class="measure flex-center">
 
-      <form>
+      <form class="text-centered">
 
         <input type="text" placeholder="Email address" />
 

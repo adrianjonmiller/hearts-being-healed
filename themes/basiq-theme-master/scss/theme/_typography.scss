@@ -70,23 +70,25 @@ html {
 }
 
 .banner- {
+
   &-hero {
     line-height: 40pt;
     font-size: 32pt;
     font-weight: 300;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    @extend .text-inverse;
     @include desktop {
       font-size: 55pt;
-      line-height: 80pt;
+      line-height: .9em;
     }
   }
+
   &-subhead {
-    line-height: 21px;
+    line-height: 1em;
     font-size: 28px;
     font-weight: 300;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    @extend .text-inverse;
+    margin-top: 2rem;
+
   }
 }
 
@@ -99,6 +101,7 @@ html {
     &-subhead {
       text-transform: uppercase;
       letter-spacing: .1rem;
+      line-height: .9em;
       font-size: 9pt;
       color: black;
       @extend .smallcap;
@@ -121,13 +124,14 @@ html {
     border-bottom: solid thin #ccc;
 
     &-subhead {
-
+    }
   }
 
   &-subhead {
     font-size: 26pt;
     color: $color-e;
     font-weight: 900;
+    line-height: 1em;
   }
 }
 
@@ -182,7 +186,7 @@ body {
   	line-height: 2.4em;
   	letter-spacing: -.5px;
   }
-  }
+}
 
 .big-event-title-hdr {
   @extend .display--section;

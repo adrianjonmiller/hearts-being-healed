@@ -28,4 +28,14 @@ jQuery(function ($) {
       $('body').removeClass('is-fixed');
     });
   }
+
+  Js.Behaviors.header = function(container) {
+    $('.js-hero').on('inview', function(event, isInView) {
+      if (isInView) {
+        $(container).addClass('in-view');
+      } else {
+        $(container).removeClass('in-view');
+      }
+    });
+  }
 });
