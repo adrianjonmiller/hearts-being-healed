@@ -219,7 +219,7 @@ class CCF_Form_Renderer {
 				<form <?php if ( $contains_file ) : ?>enctype="multipart/form-data"<?php endif; ?> class="ccf-form ccf-theme-<?php echo esc_attr( $theme ); ?>" method="post" action="" data-form-id="<?php echo (int) $form_id; ?>">
 
 					<?php $title = get_the_title( $form_id ); if ( ! empty( $title ) && apply_filters( 'ccf_show_form_title', true, $form_id ) ) : ?>
-						
+
 					<?php endif; ?>
 
 					<?php $description = get_post_meta( $form_id, 'ccf_form_description', true ); if ( ! empty( $description ) && apply_filters( 'ccf_show_form_description', true, $form_id ) ) : ?>
@@ -231,7 +231,7 @@ class CCF_Form_Renderer {
 					<?php echo $fields_html; ?>
 
 					<div class="form-submit">
-						<input type="submit" class="btn btn-primary ccf-submit-button" value="<?php echo esc_attr( get_post_meta( $form_id, 'ccf_form_buttonText', true ) ); ?>">
+						<input type="submit" class="btn btn-primary ccf-submit-button button-b" value="<?php echo esc_attr( get_post_meta( $form_id, 'ccf_form_buttonText', true ) ); ?>">
 						<img class="loading-img" src="<?php echo esc_url( site_url( '/wp-admin/images/wpspin_light.gif' ) ); ?>">
 					</div>
 

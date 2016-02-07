@@ -6,11 +6,16 @@
         <img src="{{ theme.link }}/img/logo.png" alt="{{site.name}}" />
       </a>
     </h1>
-    <nav class="header-nav flex-end" role="navigation">
-      <ul class="measure">
+    <nav class="header-nav flex-end" role="navigation" data-behavior="menu">
+      <div class="header-nav-bar collapse">
+        <span class="collapse">Menu</span>
+        <button type="button" name="button" class="header-nav-open js-open"><i class="ion-navicon"></i></button>
+        <button type="button" name="button" class="header-nav-close js-close"></button>
+      </div>
+      <ul class="flex">
       {% for item in menu.get_items %}
         <li class="nav-style--a {{item.classes | join(' ')}}">
-          <a href="{{item.get_link}}">{{item.title}}</a>
+          <a class="js-close" href="{{item.get_link}}">{{item.title}}</a>
           {% if item.get_children %}
             <ul class="dropdown">
             {% for child in item.get_children %}

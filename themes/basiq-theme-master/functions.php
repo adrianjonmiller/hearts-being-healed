@@ -3,6 +3,7 @@
 require_once 'bower_components/Mobile_Detect/Mobile_Detect.php';
 require_once 'vendor/timber-library/timber.php';
 
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
@@ -105,7 +106,9 @@ class StarterSite extends TimberSite {
 	}
 
 	function loadScripts() {
-    wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'behaviors', get_template_directory_uri() . '/js/behaviors.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true );
+
 		wp_enqueue_style( 'ionicons', get_template_directory_uri(). '/bower_components/Ionicons/css/ionicons.css', array(), '', false );
   }
 
@@ -116,7 +119,7 @@ class StarterSite extends TimberSite {
 			'description'   => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
+			'before_title'  => '<h2 class="display--sidebar widget-title collapse">',
 			'after_title'   => '</h2>',
 		) );
 

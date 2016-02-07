@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container">
+		<div class="measure">
+			<div class="col-2-3">
+				<div class="events">
+					{% for post in posts %}
+						<div class="events-event">
+							<h2 class="display--post collapse"><a href="{{post.link}}">{{post.title}}</a></h2>
+							<p>{{ post.get_preview }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			{% if dynamic_sidebar %}
+			<div id="sidebar">
+				{{ dynamic_sidebar }}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
