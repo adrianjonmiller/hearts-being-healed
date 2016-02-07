@@ -1,5 +1,130 @@
 {% extends "base.twig" %}
 
 {% block content %}
+<section class="hero">
+  <div class="container">
 
+    <h2 class="banner--hero">Women, sharing their journies</h2>
+
+      <p class="banner--subhead text-inverse">Chico Conference March 19</p>
+
+      <a href="#" title="Register Today" class="button-a--large text-inverse">Register Today</a>
+
+  </div>
+</section> <!-- / hero -->
+
+<section class="conferences">
+  <div class="container" style="width: 80%; margin: 0 auto;">
+
+  <h2 class="heading--xl font-thin text-centered" id="title">Hearts Being Healed Conference</h2>
+
+    <div class="measure" id="mesasurew">
+
+      <div>
+
+        <h3 class="display--subhead text-centered"><span class="block display--page-subhead">California</span> Chico</h3>
+
+          <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
+
+          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
+
+      </div> <!-- / column - chico -->
+
+      <div>
+
+        <h3 class="display--subhead text-centered"><span class="block display--page-subhead">California</span> Portola</h3>
+
+        <!-- <h3 class="heading--md text-centered"><span class="block">California</span> Portola</h3> -->
+
+          <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
+
+          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
+
+      </div> <!-- / column - portola -->
+
+    </div>
+  </div>
+</section> <!-- / conferences -->
+
+<section class="mission-statement" id="ms">
+  <!-- <div class="container"> -->
+    <div class="measure">
+
+      <div class="mission-img">&nbsp;</div>
+
+      <div class="mission-state" style="padding-bottom: 17pt;">
+
+        <h2 class="heading--md">Mission Statement</h2>
+
+          <p>A ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore Women's hearts.</p>
+
+          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
+
+      </div>
+
+    </div>
+  <!-- </div> -->
+</section> <!-- / mission statement -->
+
+<section class="blog">
+  <div class="container">
+
+    <h2 class="display--subhead text-centered">From the Blog</h2>
+
+    <div class="measure flex-center">
+
+      {% for post in posts|slice(0,2) %}
+
+        {{ include('article.twig') }}
+
+      {% endfor %}
+
+    </div>
+
+    <div class="measure flex-center" style="float: right;">
+
+      <p class="heading--sm" style="Text-align: right;"><a href="#" title="Go to Blog">Go to Blog</a></p>
+
+    </div>
+
+  </div>
+</section> <!-- / blog -->
+
+<section class="mailing-list">
+
+  <div class="container">
+
+    <h2 class="display--subhead text-inverse text-centered">Sign Up for our Mailing List</h2>
+
+    <div class="measure flex-center">
+
+      <form>
+
+        <input type="text" placeholder="Email address" />
+
+        <input type="submit" value="Submit" />
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section> <!-- / mailing list -->
+
+<section class="social">
+
+  <div class="container">
+
+    <h2 class="display--subhead text-centered">Find Us On</h2>
+
+      <ul class="social--column measure flex-center">
+        <li class="social--icon-fb text-centered"><a href="#" title="Facebook"><img src="{{theme.link}}/img/social-facebook.png">Facebook</a></li>
+        <li class="social--icon-tw text-centered"><a href="#" title="Twitter"><img src="{{theme.link}}/img/social-twitter.png">Twitter</a></li>
+        <li class="social--icon-li text-centered"><a href="#" title="LinkedIn"><img src="{{theme.link}}/img/social-linkedin.png">LinkedIn</a></li>
+      </ul>
+
+  </div>
+
+</section> <!-- / social -->
 {% endblock %}
