@@ -6,7 +6,7 @@
     <div class="container">
       <div class="flex">
         <div class="">
-          <h2 class="display--page-subhead inverse collapse">{{ post.display_date }}</h2>
+          <h2 class="display--page-subhead text-inverse collapse">{{ post.display_date }}</h2>
           <h1 class="display--page">{{ post.title }}</h1>
         </div>
         <div class="flex-end">
@@ -29,17 +29,17 @@
         <div class="event-speakers">
           {% for person in post.people["Speaker"] %}
 
-            <div class="event-speakers-speaker flex">
+            <a class="event-speakers-speaker flex" href="/person/{{ person.get('PER_slug') }}">
               <div>
                 {{ person.feature_image }}
               </div>
               <div>
                 <h4 class="heading--xs font-bold collapse event-speakers-title">{{ person.full_name }}</h4>
                 <p>
-                  {{ person.get('PER_short_bio')}}
+                  {{ person.get('PER_bio')|excerpt(30)}}
                 </p>
               </div>
-            </div>
+            </a>
           {% endfor %}
         </div>
       </section>
