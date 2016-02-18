@@ -1,6 +1,4 @@
-vendor
 wp-content
-bower_components
 node_modules
 composer.phar
 .DS_Store

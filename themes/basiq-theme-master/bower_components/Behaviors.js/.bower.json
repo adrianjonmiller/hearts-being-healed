@@ -1,0 +1,32 @@
+{
+  "name": "Behaviors.js",
+  "authors": [
+    "Adrian Miller <adrianjonmiller@gmail.com>"
+  ],
+  "description": "Simple javascript framework",
+  "keywords": [
+    "javascript",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  },
+  "homepage": "https://github.com/adrianjonmiller/behaviors.js",
+  "_release": "39c94258cd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "39c94258cdece7324892cb0bccaa69ac0806a3a7"
+  },
+  "_source": "git@github.com:adrianjonmiller/behaviors.js.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:adrianjonmiller/behaviors.js.git"
+}

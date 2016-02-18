@@ -1,0 +1,23 @@
+{
+  "name": "Behaviors.js",
+  "version": "0.0.0",
+  "authors": [
+    "Adrian Miller <adrianjonmiller@gmail.com>"
+  ],
+  "description": "Simple javascript framework",
+  "keywords": [
+    "javascript",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
