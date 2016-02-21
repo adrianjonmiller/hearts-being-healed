@@ -7,11 +7,11 @@
 	{% include 'head.twig' %}
 	<body class="{{body_class}} {{ device }}" data-template="base.twig">
 		{% include 'header.twig' %}
-		<main role="main">
+		<div role="main">
 			{% block content %}
 	      Sorry, no content
 	    {% endblock %}
-		</main>
+		</div>
 		{% include 'footer.twig' %}
 	</body>
 </html>
