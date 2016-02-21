@@ -24,6 +24,10 @@
 
 body.is-fixed {
   overflow-y: hidden;
+
+  iframe {
+    display: none;
+  }
 }
 
 .modal {
