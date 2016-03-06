@@ -29,6 +29,10 @@ class TimberEventEspresso extends TimberPost {
 	public function active() {
 		return EEH_Event_View::event_active_status( $this->ID );
 	}
+
+	public function dateTime() {
+		return EEH_Event_View::get_all_date_obj( $this->ID, FALSE, FALSE, 1);
+	}
 }
 
 // $post = Timber::query_post();
