@@ -13,3 +13,8 @@
 .float-left {
   float: left;
 }
+
+
+.main-label + * {
+  margin-top: 0;
+}
