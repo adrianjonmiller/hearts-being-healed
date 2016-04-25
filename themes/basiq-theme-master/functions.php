@@ -69,6 +69,7 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'menus' );
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'theme' ),
+			'footer' => esc_html__( 'Footer', 'theme' ),
 		));
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );

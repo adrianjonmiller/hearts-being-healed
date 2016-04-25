@@ -18,13 +18,20 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+
 $args = array(
   'numberposts' => 3,
   'post_type'   => 'post'
 );
- 
+
+$event_args = array();
+
+
+
 $context = Timber::get_context();
 $context['posts'] = get_posts( $args );
+// $context['events'] = do_shortcode( '[ESPRESSO_EVENTS show_expired=true]' );
+$context['events'] = espresso_get_events($event_args);
 $context['dynamic_sidebar'] = Timber::get_widgets('sidebar-1');
 
 $templates = array( 'front-page.twig' );

@@ -1,16 +1,21 @@
 {% extends "base.twig" %}
 
 {% block content %}
+
+
 <section class="hero js-hero">
-  <div class="container">
+  {% for event in events|slice(0, 1) %}
 
-    <h2 class="banner--hero text-inverse">Women sharing<br>their journeys</h2>
+      <div class="container">
 
-      <p class="banner--subhead text-inverse">Chico Conference March 19</p>
+        <h2 class="banner--hero text-inverse">Women sharing<br>their journeys</h2>
 
-      <a href="/events/chico/" title="Register Today" class="button-a--large text-inverse">Register Today</a>
+        <p class="banner--subhead text-inverse">{{event.post_title}} Conference {{event.event_start_date | date("F jS")}}</p>
 
-  </div>
+        <a href="{{event.guid}}" title="Register Today" class="button-a--large text-inverse">Register Today</a>
+
+      </div>
+  {% endfor %}
 </section> <!-- / hero -->
 
 <section class="conferences">
@@ -19,28 +24,15 @@
   <h2 class="heading--xl font-thin text-centered" id="title">Hearts Being Healed Conference</h2>
 
     <div class="measure" id="mesasurew">
+      {% for event in events|slice(0, 2) %}
+        <div>
 
-      <div>
+          <h3 class="display--subhead text-centered"><span class="block display--page-subhead"></span> {{event.post_title}}</h3>
 
-        <h3 class="display--subhead text-centered"><span class="block display--page-subhead">California</span> Chico</h3>
+            {{event.post_excerpt}}
 
-          <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
-
-          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
-
-      </div> <!-- / column - chico -->
-
-      <div>
-
-        <h3 class="display--subhead text-centered"><span class="block display--page-subhead">California</span> Portola</h3>
-
-        <!-- <h3 class="heading--md text-centered"><span class="block">California</span> Portola</h3> -->
-
-          <p>Hearts Being Healed is a ministry of women sharing their journeys, helping to build a safe place for God's Holy Spirit to heal and restore women's hearts.</p>
-
-          <p>The specific and primary purpose of this organization is to operate as a religious, charitable organization. In doing so, we are committed to show women a way to leave the pain of their pasts behind and find God's purpose for their lives, to live the remainder of their lives without shame and guilt shackling them, to live their lives in God's Holy freedom.</p>
-
-      </div> <!-- / column - portola -->
+        </div> <!-- / column - chico -->
+      {% endfor %}
 
     </div>
   </div>

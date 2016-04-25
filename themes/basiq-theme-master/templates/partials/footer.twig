@@ -3,8 +3,26 @@
   <div class="container">
 
     <div class="flex">
+      <nav>
+        <ul class="flex">
+        {% for item in menu.get_items %}
+          <li class="nav-style--a {{item.classes | join(' ')}}">
+            <a class="js-close" href="{{item.get_link}}">{{item.title}}</a>
+            {% if item.get_children %}
+              <ul class="dropdown">
+              {% for child in item.get_children %}
+                <li class="nav-style--b">
+                  <a href="{{child.get_link}}">{{child.title}}</a>
+                </li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </nav>
 
-      <nav class="nav-footer">
+      <!-- <nav class="nav-footer">
         <ul class="flex">
           <li class="nav-footer--a"><a href="/" title="Home">Home</a></li>
           <li class="nav-footer--a">
@@ -35,9 +53,9 @@
           </li>
           <li class="nav-footer--a"><a href="contact" title="Contact">Contact</a></li>
         </ul>
-      </nav>
+      </nav> -->
 
-      <ul class="social--tabs">
+      <ul class="social--tabs flex-end">
         <li class="social--tabs-facebook"><a href="#" title="Share on Facebook"><span class="icon"><img src="{{theme.link}}/img/social--facebook-white.png"></span> Share</a></li>
         <li class="social--tabs-twitter"><a href="#" title="Share on Twitter"><span class="icon"><img src="{{theme.link}}/img/social--twitter-white.png"></span> Share</a></li>
         <li class="social--tabs-linkedin"><a href="#" title="Share on LinkedIn"><span class="icon"><img src="{{theme.link}}/img/social--linkedin-white.png"></span> Share</a></li>
